@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+	margin: 30px auto;
+	padding: 20px;
+	text-align: center;
+	background-color: #1dcaff;
+	color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+.quote {
+  padding: 20px;
+  margin-top:50px;
+}
+.trigger {
+  border: 2px solid #fff;
+  background-color: #1dcaff;
+  width: 200px;
+  height: 30px;
+  margin-top: 60px;
+  color: #fff;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+.trigger:hover {
+  background-color: white;
+  color: #1dcaff;
+}
+.fa-twitter {
+  color: white;
+}
+.tweet {
+  color: white;
+  text-decoration: none;
+  line-height: 70px;
+}
