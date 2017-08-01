@@ -1,9 +1,7 @@
 var url = 'https://restcountries.eu/rest/v1/name/';
-var countriesDetails = 'https://restcountries.eu/rest/v2/all';
 var countriesList = $('#countries');
 
 $('#search').click(searchCountries);
-$('#details').click(showCountriesDetails);
 
 function searchCountries() {
  	var countryName = $('#country-name').val();
@@ -15,17 +13,24 @@ if(!countryName.length) countryName = 'Poland';
   });
 }
 
-function showCountriesList(resp) {
-  countriesList.empty();
-  resp.forEach(function(item) {
-    $('<li>').text(item.name).appendTo(countriesList);
-  });
-}
+var filteredArray = [];
+response.forEach(function(country) {
+  if (country.name.indexOf($('#country-name').val()) > -1) {
+    filteredArray.push(country);
+  }
+})
 
-function showCountriesDetails (){
-  $.ajax({
-    url: countriesDetails,
-    method: 'GET',
-    success: showCountriesDetails
+function showCountriesList(response) {
+  countriesList.empty();
+  response.forEach(function(country) {
+    var newLi = $('<li>');
+    newLi.text(country.name).appendTo(countriesList);
+    newLi.on('click', function() {
+      countriesList.empty();
+      $('<p>').text('name : ' + country.name).appendTo(countriesList);
+      $('<p>').text('capital : ' + country.capital).appendTo(countriesList);
+      $('<p>').text('continent : ' + country.region).appendTo(countriesList);
+      $('<p>').text('currency : ' + country.currencies).appendTo(countriesList);
+    })
   });
 }
