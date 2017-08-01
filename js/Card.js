@@ -1,9 +1,9 @@
 // KLASA KANBAN CARD
 function Card(id, name) {
 	var self = this;
-  this.id - id;
+  this.id = id;
   this.name = name || 'No name given';
-	this.element = createCard();
+	this.$element = createCard();
 
 	function createCard() {
 		var card = $('<li class="card"></li>');
@@ -27,7 +27,7 @@ Card.prototype = {
       url: baseUrl + '/card/' + self.id,
       method: 'DELETE',
       success: function(){
-        self.element.remove();
+        self.$element.remove();
       }
     });
   }
