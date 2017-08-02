@@ -13,15 +13,18 @@ if(!countryName.length) countryName = 'Poland';
   });
 }
 
-var filteredArray = [];
-response.forEach(function(country) {
-  if (country.name.indexOf($('#country-name').val()) > -1) {
-    filteredArray.push(country);
-  }
-})
+
 
 function showCountriesList(response) {
   countriesList.empty();
+
+  var filteredArray = [];
+  response.forEach(function(country) {
+    if (country.name.indexOf($('#country-name').val()) > -1) {
+      filteredArray.push(country);
+    }
+  })
+
   response.forEach(function(country) {
     var newLi = $('<li>');
     newLi.text(country.name).appendTo(countriesList);
