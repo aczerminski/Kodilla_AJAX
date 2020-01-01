@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: #222930;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+* {box-sizing: border-box;}
+
+.ui-sortable {
+  min-height: 80px;
+  padding-left:5px;
+}
+
+.btn-delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+}
+
+.board h1 {
+  margin-left: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.create-column {
+  border-radius: 8px;
+  border-color: #F87B20;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  background-color: #F87B20;
+  cursor: pointer;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.column-title {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  order: 1;
+  min-width: 300px;
+  min-height: 50vh;
+  background-color:  #238B99;
+  margin-left: 8px;
+  list-style: none;
+  position: relative;
+}
+
+.column-add-card {
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 5px 8px;
+  display: block;
+}
+
+.card {
+  box-sizing: border-box;
+  display: block;
+  height: 60px;
+  margin-bottom: 5px;
+  padding: 4px;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+}
+
+.card-list {
+  list-style: none;
+  margin: 5px;
+  padding: 0;
+}
+
+.card-description {
+  margin: 2px 0;
+}
+
+.card-placeholder {
+  box-sizing: border-box;
+  display: block;
+  height: 60px;
+  margin-bottom: 5px;
+  border: 2px solid lightgrey;
+  background-color: lightblue;
+}
+
+.add-card {
+  border-radius: 8px;
+  border-color: #F87B20;
+  padding: 5px 10px;
+  color: white;
+  background-color: #F87B20;
+  margin-left: 5px;
+  cursor: pointer;
+}
